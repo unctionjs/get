@@ -1,58 +1,58 @@
-/* eslint-disable flowtype/require-parameter-type, flowtype/require-return-type, no-undefined, no-magic-numbers */
-import {test} from "tap"
+/* eslint-disable no-undefined, no-magic-numbers */
+import {test} from "tap";
 
-import get from "./"
+import get from "./";
 
 test("Object found key", ({same, end}) => {
   same(
     get("aaa")({aaa: "1"}),
     "1"
-  )
+  );
 
-  end()
-})
+  end();
+});
 
 test("Object missing key", ({same, end}) => {
   same(
     get("bbb")({aaa: "1"}),
     undefined
-  )
+  );
 
-  end()
-})
+  end();
+});
 
 test("undefined missing key", ({same, end}) => {
   same(
     get("bbb")(undefined),
     undefined
-  )
+  );
 
-  end()
-})
+  end();
+});
 
 test("Array missing key", ({same, end}) => {
   same(
     get(0)(["aaa"]),
     "aaa"
-  )
+  );
 
-  end()
-})
+  end();
+});
 
 test("String found key", ({same, end}) => {
   same(
     get(0)("abc"),
     "a"
-  )
+  );
 
-  end()
-})
+  end();
+});
 
 test("Map found key", ({same, end}) => {
   same(
     get("aaa")(new Map([["aaa", "aaa"]])),
     "aaa"
-  )
+  );
 
-  end()
-})
+  end();
+});
