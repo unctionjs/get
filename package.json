@@ -17,7 +17,9 @@
   "homepage": "https://github.com/unctionjs/get#readme",
   "repository": "github:unctionjs/get",
   "bugs": "https://github.com/unctionjs/get/issues",
+  "module": "index.js",
   "main": "main.js",
+  "browser": "browser.js",
   "nyc": {
     "require": [
       "@babel/register"
@@ -29,8 +31,8 @@
     "prepublishOnly": "npm run build",
     "test": "NODE_ENV=test tap --100 './test.js'",
     "build": "npm run build:browser && npm run build:main",
-    "build:main": "babel --source-type module --source-maps true --out-file './main.js' './index.js'",
-    "build:browser": "babel --source-type module --source-maps true --out-file './browser.js' './index.js'",
+    "build:main": "babel --env-name main --out-file './main.js' './index.js'",
+    "build:browser": "babel --env-name browser --out-file './browser.js' './index.js'",
     "lint": "eslint './index.js'",
     "ci": "npm run test"
   },
@@ -38,8 +40,7 @@
     "@babel/cli": "7.2.3",
     "@babel/core": "7.3.4",
     "@babel/plugin-proposal-object-rest-spread": "7.3.4",
-    "@babel/plugin-syntax-dynamic-import": "7.2.0",
-    "@babel/preset-env": "7.3.4",
+    "@babel/preset-env": "7.4.4",
     "@babel/preset-typescript": "7.3.3",
     "@babel/register": "7.4.0",
     "babel-eslint": "10.0.1",
@@ -56,7 +57,8 @@
     "tap": "12.6.1"
   },
   "dependencies": {
-    "@unction/isnil": "6.1.0"
+    "@unction/isnil": "6.1.0",
+    "core-js": "3.0.1"
   },
   "files": [
     "index.js",
@@ -64,7 +66,5 @@
     "main.js.map",
     "browser.js",
     "browser.js.map"
-  ],
-  "module": "index.js",
-  "browser": "browser.js"
+  ]
 }
