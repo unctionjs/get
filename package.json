@@ -1,6 +1,6 @@
 {
   "name": "@unction/get",
-  "version": "2.4.0",
+  "version": "2.5.0",
   "description": "Returns the value of a specific key on an iterable",
   "keywords": [
     "unction",
