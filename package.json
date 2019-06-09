@@ -17,7 +17,7 @@
   "homepage": "https://github.com/unctionjs/get#readme",
   "repository": "github:unctionjs/get",
   "bugs": "https://github.com/unctionjs/get/issues",
-  "module": "index.js",
+  "module": "module.js",
   "main": "main.js",
   "browser": "browser.js",
   "nyc": {
