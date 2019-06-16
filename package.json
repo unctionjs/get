@@ -57,8 +57,7 @@
     "tap": "12.6.1"
   },
   "dependencies": {
-    "@unction/isnil": "6.5.0",
-    "core-js": "3.0.1"
+    "@unction/isnil": "6.5.0"
   },
   "files": [
     "index.js",
