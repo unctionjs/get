@@ -20,7 +20,7 @@
   "module": "module.js",
   "main": "main.js",
   "browser": "browser.js",
-  "types": "types.js",
+  "types": "types.d.ts",
   "nyc": {
     "require": [
       "@babel/register"
@@ -60,12 +60,11 @@
     "typescript": "3.5.1"
   },
   "dependencies": {
-    "@unction/isnil": "6.6.0"
+    "@unction/isnil": "6.6.0",
+    "@unction/type": "4.2.1"
   },
   "files": [
     "index.ts",
-    "index.js",
-    "index.js.map",
     "main.js",
     "main.js.map",
     "browser.js",

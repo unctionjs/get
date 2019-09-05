@@ -1,27 +1,27 @@
 import isNil from "@unction/isnil";
+import type from "@unction/type";
+import {EnumerableType} from "./types";
 
-export default function get (name: unknown) {
-  return function getProperty (keyedFunctor: Record<string, unknown> | Record<number, unknown> | Map<unknown, unknown> | unknown): null | unknown {
-    if (isNil(keyedFunctor)) {
-      return null as never;
+export default function get<K, V> (key: K) {
+  return function getProperty (enumerable: EnumerableType<V, K>): V | K | null {
+    if (isNil(enumerable)) {
+      return null;
     }
-
-    if (typeof keyedFunctor === "object" || typeof keyedFunctor === "function") {
-      if ("get" in keyedFunctor) {
-        const dictionary: Map<unknown, unknown> = keyedFunctor! as any;
-
-        return dictionary.get(name);
-      } else if (typeof name === "number" && name in keyedFunctor) {
-        const dictionary: Record<number, unknown> = keyedFunctor! as any;
-
-        return dictionary[name];
-      } else if (typeof name === "string" && name in keyedFunctor) {
-        const dictionary: Record<string, unknown> = keyedFunctor! as any;
-
-        return dictionary[name];
+    switch (type(enumerable)) {
+      case "Object":
+      case "Array":
+      case "String": {
+        return enumerable[key];
+      }
+      case "Map": {
+        return enumerable.get(key);
+      }
+      case "Set": {
+        return enumerable.has(key) ? key : null;
+      }
+      default: {
+        return null;
       }
     }
-
-    return null as never;
   };
 }
