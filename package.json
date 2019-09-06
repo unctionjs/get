@@ -56,7 +56,7 @@
   },
   "dependencies": {
     "@unction/isnil": "6.6.0",
-    "@unction/type": "4.2.1"
+    "@unction/type": "5.0.0"
   },
   "files": [
     "index.ts",
