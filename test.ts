@@ -1,5 +1,5 @@
 /* eslint-disable no-undefined, no-magic-numbers */
-import get from "./index.ts";
+import get from "./index";
 
 test("Object found key", () => {
   expect(get("aaa")({aaa: "1"})).toEqual("1");
