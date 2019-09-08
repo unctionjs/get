@@ -55,8 +55,8 @@
     "typescript": "3.5.1"
   },
   "dependencies": {
-    "@unction/isnil": "6.6.0",
-    "@unction/type": "5.0.0"
+    "@unction/isnil": "6.6.1",
+    "@unction/type": "5.0.1"
   },
   "files": [
     "index.ts",
