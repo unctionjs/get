@@ -63,5 +63,6 @@
     "main.js",
     "browser.js",
     "types/*.d.ts"
-  ]
+  ],
+  "sideEffects": false
 }
