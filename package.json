@@ -63,7 +63,7 @@
     "typescript": "^4.0.2"
   },
   "dependencies": {
-    "@unction/isnil": "6.6.2",
-    "@unction/type": "5.0.2"
+    "@unction/isnil": "^6.6.3",
+    "@unction/type": "^5.0.3"
   }
 }
