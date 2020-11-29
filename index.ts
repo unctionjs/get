@@ -1,6 +1,5 @@
 import isNil from "@unction/isnil";
 import type from "@unction/type";
-import {EnumerableType} from "./types";
 
 export default function get<K, V> (key: K) {
   return function getProperty (enumerable: EnumerableType<V, K>): V | K | null {
