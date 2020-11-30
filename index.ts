@@ -2,7 +2,7 @@ import isNil from "@unction/isnil";
 import type from "@unction/type";
 
 export default function get<K, V> (key: K) {
-  return function getProperty (enumerable: EnumerableType<V, K>): V | K | null {
+  return function getProperty (enumerable: Record<string | number | symbol, V> | Map<K, V>): V | K | null {
     if (isNil(enumerable)) {
       return null;
     }
